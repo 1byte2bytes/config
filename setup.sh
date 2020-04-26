@@ -1,3 +1,5 @@
+set -e
+
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
 brew install nvim cmake python3 tmux
 python3 -m pip install --user --upgrade pynvim
@@ -9,7 +11,7 @@ cat .vim/.ycm_extra_conf.py > ~/.vim/.ycm_extra_conf.py
 nvim +PluginInstall +qall
 cd ~/.vim/bundle/YouCompleteMe && ./install.py --clang-completer
 
-git clone git@github.com:asnr/cmus.git -b asnr-master
+git clone https://github.com/asnr/cmus.git -b asnr-master
 cd cmus
 ./configure
 make
